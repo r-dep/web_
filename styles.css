@@ -1,0 +1,103 @@
+.logo{
+    border: 2px solid yellow;
+    background-color: hsl(60, 100%, 80%);
+    margin: auto;
+    color: hsl(37, 100%, 64%);
+    width: 200px;
+    height:200px;
+    text-align: left;
+    font-size: 1.5em;
+    padding:30px 5px ;
+    font-family: cursive;
+    border-radius: 20px;
+}
+body{
+    background-color: black;
+    color: white;
+}
+img{
+    width: 100%;
+}
+h2{
+    font-size: 3em;
+    text-align: center;
+    font-weight: bold;
+    font-family: serif;
+}
+h1{
+    display: block;
+    top: 50px;
+    width: 100%;
+    background-color: blue;
+    padding: 30px;   
+}
+.active a{
+    font-weight: bold;
+    color: pink;
+    font-size: 1.2em;
+    text-decoration: underline ;
+}
+.navbar{
+    position: relative;
+}
+.card{
+    border-radius: 20px;
+    box-shadow: 5px 5px 15px;
+    margin-top: 40px;
+    width: 400px;
+    display: flex;
+    margin: auto;
+    transition: 0.5s ease;
+
+}
+.location{
+    text-align: center;
+}
+.card:hover{
+    box-sizing: border-box;
+    box-shadow: 5px 5px 10px;
+    border: 1px solid hsl(0, 0%, 20%);
+    background-color: hsl(0, 0%, 80%);
+    color: red;
+}
+.card img{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 400px;
+}
+  @media (min-width:900px) {
+    .logo{
+        height: 250px;
+        width: 250px;
+    }
+  }
+  @media (min-width:1024px) {
+    .card-container{
+        display: flex;
+        gap: 20px;
+    }
+  }
+  #bakerinfo{
+    text-align: center;
+    color: blue;
+    text-shadow: 0px 4px 5px black;
+    font-weight: bold;
+  }
+  #baker{
+    border-radius: 200px;
+    width: 500px;
+  }
+  #bakerinfo section{
+    margin: 30px;
+    color: orange;
+    text-shadow: none;
+  }
+  footer{
+    position:sticky;
+    top: 100%;  
+}
+.blank{
+    display: block;
+    height: 30vh;
+
+}
