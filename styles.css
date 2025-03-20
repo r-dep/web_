@@ -1,103 +1,210 @@
-.logo{
-    border: 2px solid yellow;
-    background-color: hsl(60, 100%, 80%);
-    margin: auto;
-    color: hsl(37, 100%, 64%);
-    width: 200px;
-    height:200px;
-    text-align: left;
-    font-size: 1.5em;
-    padding:30px 5px ;
-    font-family: cursive;
-    border-radius: 20px;
+/* ============================
+   🔹 General Styles (Global)
+   ============================ */
+
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-body{
-    background-color: black;
+
+/* Apply smooth scrolling behavior to the whole page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================
+   🔹 Navbar Styling
+   ============================ */
+
+.navbar {
+    padding: 15px;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
     color: white;
 }
-img{
-    width: 100%;
-}
-h2{
-    font-size: 3em;
-    text-align: center;
-    font-weight: bold;
-    font-family: serif;
-}
-h1{
-    display: block;
-    top: 50px;
-    width: 100%;
-    background-color: blue;
-    padding: 30px;   
-}
-.active a{
-    font-weight: bold;
-    color: pink;
-    font-size: 1.2em;
-    text-decoration: underline ;
-}
-.navbar{
-    position: relative;
-}
-.card{
-    border-radius: 20px;
-    box-shadow: 5px 5px 15px;
-    margin-top: 40px;
-    width: 400px;
-    display: flex;
-    margin: auto;
-    transition: 0.5s ease;
 
+.navbar-nav .nav-item .nav-link {
+    color: white;
+    transition: color 0.3s;
 }
-.location{
-    text-align: center;
+
+/* Change navbar link color on hover */
+.navbar-nav .nav-item .nav-link:hover {
+    color: #FFD700;
 }
-.card:hover{
-    box-sizing: border-box;
-    box-shadow: 5px 5px 10px;
-    border: 1px solid hsl(0, 0%, 20%);
-    background-color: hsl(0, 0%, 80%);
-    color: red;
+
+/* ============================
+   🔹 Carousel Styling
+   ============================ */
+
+/* Adjusts carousel height dynamically */
+.reduce-height {
+    height: 400px; /* Default height */
+    overflow: hidden; /* Prevents unwanted overflow */
 }
-.card img{
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    height: 400px;
+
+.carousel-inner img {
+    height: 100%;
+    object-fit: cover; /* Ensures images fit properly without stretching */
 }
-  @media (min-width:900px) {
-    .logo{
-        height: 250px;
-        width: 250px;
+
+/* Responsive carousel height for smaller screens */
+@media (max-width: 900px) {
+    .reduce-height {
+        height: 300px; /* Adjust height for smaller screens */
     }
-  }
-  @media (min-width:1024px) {
-    .card-container{
-        display: flex;
-        gap: 20px;
+}
+
+@media (min-width: 1024px) {
+    .reduce-height {
+        height: 500px; /* Adjust height for larger screens */
     }
-  }
-  #bakerinfo{
-    text-align: center;
-    color: blue;
-    text-shadow: 0px 4px 5px black;
+}
+
+/* ============================
+   🔹 Scrolling Text Marquee
+   ============================ */
+
+.scrolling-text {
+    white-space: nowrap;
+    display: block;
+    font-size: 24px;
     font-weight: bold;
-  }
-  #baker{
-    border-radius: 200px;
-    width: 500px;
-  }
-  #bakerinfo section{
-    margin: 30px;
     color: orange;
-    text-shadow: none;
-  }
-  footer{
-    position:sticky;
-    top: 100%;  
+    padding: 10px;
+    animation: scrollText 20s linear infinite; /* Continuous scrolling */
 }
-.blank{
-    display: block;
-    height: 30vh;
 
+/* Keyframe animation for scrolling text */
+@keyframes scrollText {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* ============================
+   🔹 Location Section Styling
+   ============================ */
+
+.location {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* ============================
+   🔹 Product Cards Styling
+   ============================ */
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; /* Ensures responsiveness */
+    padding: 20px;
+}
+
+.card {
+    width: 300px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Adjust card image sizes */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Prevents distortion */
+    border-radius: 8px;
+}
+
+/* ============================
+   🔹 More Products Button
+   ============================ */
+
+#M-P-btn {
+    margin-top: 20px;
+}
+
+#M-P-btn .btn {
+    font-size: 18px;
+    padding: 10px 20px;
+}
+
+/* ============================
+   🔹 Baker Section Styling
+   ============================ */
+
+#bakerinfo {
+    text-align: center;
+    margin-top: 40px;
+}
+
+#baker {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Baker animation on hover */
+#baker:hover {
+    animation: round 3s ease-in-out forwards;
+}
+
+/* Keyframe animation for baker image */
+@keyframes round {
+    0% {
+        border-radius: 200px;
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.2);
+    }
+    100% {
+        border-radius: 50%;
+        transform: rotate(360deg) scale(1);
+    }
+}
+
+/* ============================
+   🔹 Footer Styling
+   ============================ */
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: white;
+    margin-top: 30px;
+}
+
+/* ============================
+   🔹 Responsive Design
+   ============================ */
+
+/* Adjusts card layout for smaller screens */
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Adjust navbar font size for small screens */
+@media (max-width: 600px) {
+    .navbar-brand {
+        font-size: 20px;
+    }
 }
